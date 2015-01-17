@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="TinyFrog.Profiler.Gui.UserControls.Profile.GameProfiler"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024" Background="LightGray">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="180"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+            
+           
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <!-- Profiling -->
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                  
+                </StackPanel>
+            </Grid>
+         
+            
+            <StackPanel Orientation="Vertical" Grid.Row="0">
+                <TextBlock x:Name="txtAvgTime" >Avg:</TextBlock>
+                <TextBlock x:Name="txtAvgUpdate" >Avg:</TextBlock>
+            </StackPanel>
+            <Button VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="2" Width="115" Height="30" x:Name="btnProfile" Margin="2" IsEnabled="False" Click="btnProfile_Click">Start Profiling</Button>
+
+            <!-- Chart Views-->
+            <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="1">
+            <Grid Height="180"  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="770"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+              
+                </Grid.ColumnDefinitions>
+
+                    <Rectangle Margin="5" Width="770" Height="160" Fill="#A8D9FF"></Rectangle>
+                
+                <Image Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top"  x:Name="ImageBox" Margin="5" Width="770" Height="160"  MouseLeftButtonDown="ImageBox_MouseLeftButtonDown">
+
+                </Image>
+
+                    <StackPanel Orientation="Vertical" Grid.Column="2">
+                        <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                            <TextBlock Margin="2" Height="25" VerticalAlignment="Top">Target FPS:</TextBlock>
+                            <ComboBox x:Name="cmbTargetFps" Margin="2" Height="30" Width="50" VerticalAlignment="Top" SelectionChanged="Selector_OnSelectionChanged">
+                                <ComboBoxItem x:Name="cmbiSixtyFps" IsSelected="True">
+                                    <TextBlock>60</TextBlock>
+                                </ComboBoxItem>
+                                <ComboBoxItem x:Name="cmbiThirtyFps">
+                                    <TextBlock>30</TextBlock>
+                                </ComboBoxItem>
+                            </ComboBox>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            
+            <!-- Tree Views -->
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Call Tree" Margin="5" VerticalAlignment="Bottom"></TextBlock>
+                    <TreeView Grid.Column="0" Grid.Row="1" x:Name="treeview_currentFrame" Margin="5"></TreeView>
+                </Grid>
+
+                <Grid Grid.Column="1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Hotspots (Not including children)" Margin="5" VerticalAlignment="Bottom"></TextBlock>
+                    <ListBox x:Name="Hotspots" Grid.Row="1" Margin="5">
+                        
+                    </ListBox>
+                    </Grid>
+                </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

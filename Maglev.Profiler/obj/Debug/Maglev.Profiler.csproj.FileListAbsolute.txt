@@ -1,0 +1,4 @@
+C:\repositories\Druids\Maglev.Profiler\Maglev.Profiler\bin\Debug\Maglev.Profiler.dll
+C:\repositories\Druids\Maglev.Profiler\Maglev.Profiler\bin\Debug\Maglev.Profiler.pdb
+C:\repositories\Druids\Maglev.Profiler\Maglev.Profiler\obj\Debug\Maglev.Profiler.dll
+C:\repositories\Druids\Maglev.Profiler\Maglev.Profiler\obj\Debug\Maglev.Profiler.pdb

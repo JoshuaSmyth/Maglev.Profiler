@@ -1,0 +1,4 @@
+C:\repositories\Druids\Maglev.Profiler\Maglev.Profiler\bin\Release\Maglev.Profiler.dll
+C:\repositories\Druids\Maglev.Profiler\Maglev.Profiler\bin\Release\Maglev.Profiler.pdb
+C:\repositories\Druids\Maglev.Profiler\Maglev.Profiler\obj\Release\Maglev.Profiler.dll
+C:\repositories\Druids\Maglev.Profiler\Maglev.Profiler\bin\Distribution\Maglev.Profiler.dll

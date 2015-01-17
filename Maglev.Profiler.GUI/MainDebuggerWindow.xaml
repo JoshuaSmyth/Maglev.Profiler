@@ -1,0 +1,29 @@
+﻿<Window x:Class="WorldEditor.Debugger.MainDebuggerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:userControls="clr-namespace:TinyFrog.Profiler.Gui.UserControls"
+        xmlns:profile="clr-namespace:TinyFrog.Profiler.Gui.UserControls.Profile"
+        xmlns:UserControls="clr-namespace:TinyFrog.Profiler.Gui.UserControls.RemoteModifier"
+        xmlns:log="clr-namespace:TinyFrog.Profiler.Gui.UserControls.Log" Title="Remote Debugger" Height="768" Width="1024">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <userControls:ConnectionStatus x:Name="ConnectionStatusControl"></userControls:ConnectionStatus>
+        
+        <TabControl Grid.Row="1">
+            <TabItem Header="Profiler">
+                <profile:GameProfiler x:Name="GameProfilerControl"></profile:GameProfiler>
+            </TabItem>
+            <TabItem Header="Remote Class Modifier">
+                <UserControls:RemoteClassModifier x:Name="RemoteClassModifierControl"></UserControls:RemoteClassModifier>
+            </TabItem>
+            <TabItem Header="Global Log">
+                <log:RemoteLog x:Name="GlobalLogControl"></log:RemoteLog>
+            </TabItem>
+        </TabControl>
+       
+    </Grid>
+</Window>

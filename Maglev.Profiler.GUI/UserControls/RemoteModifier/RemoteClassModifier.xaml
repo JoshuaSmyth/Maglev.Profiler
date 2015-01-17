@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="TinyFrog.Profiler.Gui.UserControls.RemoteModifier.RemoteClassModifier"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <Button x:Name="GetData" Margin="5" Click="GetData_Click">Get Data</Button>
+        
+        <ListBox x:Name="lbClasses" Grid.Row="1" Margin="5" SelectionChanged="lbClasses_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                        <TextBlock Text="{Binding ClassName}" Margin="5"></TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+        <ScrollViewer  Grid.Row="1" Grid.Column="1">
+            <StackPanel x:Name="propertiesControl" Orientation="Vertical">
+                
+            </StackPanel>
+        </ScrollViewer>
+        
+    </Grid>
+</UserControl>
